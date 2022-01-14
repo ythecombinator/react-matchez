@@ -1,11 +1,12 @@
-import React, { PropsWithChildren, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { isNil } from 'lodash';
 
 import { DeepPatternUnion } from '../../_internals/types';
 import { exceptions, invariant } from '../../_internals/error';
 
-export type WithProps<Shape, Strict extends boolean> = PropsWithChildren<
-  DeepPatternUnion<Shape, Strict>
+export type WithProps<Shape, Strict extends boolean> = DeepPatternUnion<
+  Shape,
+  Strict
 > & { children: ReactNode };
 
 export function With<Shape, Strict extends boolean>(

@@ -1,5 +1,6 @@
-import { Children, PropsWithChildren, ReactNode } from 'react';
+import { Children, ReactElement } from 'react';
 
+import { OtherwiseProps, WhenProps, WithProps } from '../../components';
 import {
   nodesToElementWithMetadata,
   parseChildren,
@@ -8,13 +9,20 @@ import {
 } from '../../_internals/eval';
 import { exceptions, invariant } from '../../_internals/error';
 
-export interface MatchProps<Shape>
-  extends PropsWithChildren<{
-    children: ReactNode;
-    value?: Shape;
-    otherwise?: JSX.Element;
-    firstMatch?: boolean;
-  }> {}
+export interface MatchProps<Shape> {
+  value?: Shape;
+  children: _MatchChildren<Shape>;
+  otherwise?: JSX.Element;
+  firstMatch?: boolean;
+}
+
+type _MatchChildren<Shape> =
+  | ReactElement<WithProps<Shape, boolean>>
+  | ReactElement<WithProps<Shape, boolean>>[]
+  | ReactElement<WhenProps<Shape>>
+  | ReactElement<WhenProps<Shape>>[]
+  | ReactElement<OtherwiseProps>
+  | ReactElement<OtherwiseProps>[];
 
 export function Match<Shape>(props: MatchProps<Shape>) {
   const { children, value, firstMatch = false, otherwise } = props;

@@ -1,13 +1,13 @@
-import React, { PropsWithChildren, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { isNil } from 'lodash';
 
 import { exceptions, invariant } from '../../_internals/error';
 
-export function Otherwise(
-  props: PropsWithChildren<{
-    children: ReactNode;
-  }>
-) {
+export interface OtherwiseProps {
+  children: ReactNode;
+}
+
+export function Otherwise(props: OtherwiseProps) {
   const { children } = props;
 
   invariant(isNil(children), exceptions.when.no_predicate);

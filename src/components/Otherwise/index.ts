@@ -1,1 +1,1 @@
-export { Otherwise } from './Otherwise';
+export { Otherwise, OtherwiseProps } from './Otherwise';
