@@ -1,12 +1,16 @@
+import { isEmpty, isNull } from 'lodash';
 import { isMatching } from 'ts-pattern';
+
+import { When, WhenProps } from '../components/When';
+import { With } from '../components/With';
+import { Otherwise } from '../components/Otherwise';
 
 import {
   ElementWithMetadata,
   ElementWithMetadataUnion,
   MatchWithCase,
 } from './types';
-import { When, WhenProps } from '../components/When';
-import { With } from '../components/With';
+import { exceptions, invariant } from './error';
 
 // WHEN
 
@@ -73,4 +77,28 @@ export function evaluateWithExpression<Shape>(
     element: item.element,
     position: item.position,
   })) as Array<ElementWithMetadata<Shape>>;
+}
+
+// Otherwise
+
+export function isOtherwise<Shape>(
+  child: ElementWithMetadataUnion<Shape>
+): child is ElementWithMetadata<Shape> {
+  return child.element.type === Otherwise;
+}
+
+export function evaluateOtherwiseExpression<Shape>(
+  otherwiseProp: JSX.Element,
+  otherwiseChildren: ElementWithMetadata<Shape>[]
+) {
+  const noCase = isEmpty(otherwiseChildren) && isNull(otherwiseProp);
+  invariant(noCase, exceptions.match.no_otherwise);
+
+  const multipleCases = !isEmpty(otherwiseChildren) && Boolean(otherwiseProp);
+  invariant(multipleCases, exceptions.match.multiple_otherwise);
+
+  const multipleChildren = otherwiseChildren.length > 1;
+  invariant(multipleChildren, exceptions.match.multiple_otherwise);
+
+  return otherwiseProp ?? otherwiseChildren[0].element;
 }
