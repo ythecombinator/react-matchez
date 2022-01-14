@@ -1,4 +1,4 @@
-import { Children, PropsWithChildren } from 'react';
+import { Children, PropsWithChildren, ReactNode } from 'react';
 
 import {
   nodesToElementWithMetadata,
@@ -10,6 +10,7 @@ import { exceptions, invariant } from '../../_internals/error';
 
 export interface MatchProps<Shape>
   extends PropsWithChildren<{
+    children: ReactNode;
     value?: Shape;
     otherwise?: JSX.Element;
     firstMatch?: boolean;

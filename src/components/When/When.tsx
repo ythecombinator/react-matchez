@@ -1,9 +1,10 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, ReactNode } from 'react';
 import { isNil } from 'lodash';
 
 import { exceptions, invariant } from '../../_internals/error';
 
 export interface WhenProps<Shape> {
+  children: ReactNode;
   predicate: (value?: Shape) => boolean;
 }
 
