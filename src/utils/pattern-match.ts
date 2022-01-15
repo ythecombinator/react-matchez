@@ -11,9 +11,15 @@ import {
 } from '../components';
 
 export const getPatternMatch = <Shape, Strict extends boolean>(
+  /** Used here to mark the shape of the `value` prop to
+   * be passed to the `Match` component.
+   * */
   // @ts-ignore
   // Reason: we want to enable developers to pass a parameter instead of a generic type.
   value?: Shape,
+  /** Indicates whether you want the compiler to make all the `Shape`
+   * properties deeply `required` in order to match.
+   * */
   // @ts-ignore
   // Reason: we want to enable developers to pass a parameter instead of a generic type.
   strict?: boolean
@@ -26,6 +32,12 @@ export const getPatternMatch = <Shape, Strict extends boolean>(
 };
 
 export const usePatternMatch = <Shape, Strict extends boolean>(
+  /** Used here to mark the shape of the `value` prop to
+   * be passed to the `Match` component.
+   * */
   value?: Shape,
+  /** Indicates whether you want the compiler to make all the `Shape`
+   * properties deeply `required` in order to match.
+   * */
   strict?: boolean
 ) => getPatternMatch<Shape, Strict>(value, strict);

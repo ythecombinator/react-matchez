@@ -19,7 +19,7 @@ This is implemented out of the box in languages like Haskell, Rust, and Elixir a
 
 ## Why react-match
 
-Unfortunately, Javascript and TypeScript weren’t designed with pattern matching in mind. Fortunately, there are some great initiatives to address it, e.g.:
+Unfortunately, JavaScript and TypeScript weren’t designed with pattern matching in mind. Fortunately, there are some great initiatives to address it, e.g.:
 
 - [Daggy](https://github.com/fantasyland/daggy) gives you the ability to define a type and values of this type (sum types) that you can then pattern match to declare an action depending on the value of this type.
 
@@ -109,3 +109,26 @@ What we have, though, are domain-specific matching/branching solutions, for exam
 | Name                  | Type      | Default value | Description                                                                                   |
 | --------------------- | --------- | ------------- | --------------------------------------------------------------------------------------------- |
 | children _(required)_ | ReactNode |               | Any node to be rendered when its other props match the `value` defined on its `Match` parent. |
+
+## `getPatternMatch`
+
+### Overview
+
+- This function is a typing helper and returns typed versions of the components API—so that you don't have to manually type `With`, `When`, etc. each time you use them.
+- It takes either:
+  - Two **regular parameters**: `value` and `strict`. This alternative is ideal when you want the `Shape` to be inferred.
+  - Two **type parameters**: `Shape` and `Strict`. This alternative is ideal when you have an `interface`/`type` for your `Shape` and you just want to pass them.
+
+## `usePatternMatch`
+
+### Overview
+
+Just like `getPatternMatch`, but as a React hook.
+
+## `not`
+
+### Overview
+
+- It enables you to match on everything but a specific value.
+- It takes a pattern and returns its opposite.
+- It's a re-export of `ts-pattern`'s [`not` function](https://github.com/gvergnaud/ts-pattern#notpattern).
