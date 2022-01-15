@@ -4,11 +4,11 @@
 
 # Introduction
 
-## Overview
-
 <p align="center">
   <img src="comparison.png" />
 </p>
+
+## Overview
 
 - Typesafe, with helpful type inference
 - Expressive API
