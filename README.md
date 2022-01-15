@@ -41,6 +41,33 @@ What we have, though, are domain-specific matching/branching solutions, for exam
 
 > **react-match** then comes as a first-class-React, generic, strongly-typed, solution that you can use to build your own domain-specific matching solutions—and reduce drastically the `if`/`else`/`switch` boilerplate from your components.
 
+# Documentation
+
+- [Introduction](#introduction)
+  - [Overview](#overview)
+  - [Why Pattern Matching](#why-pattern-matching)
+  - [Why react-match](#why-react-match)
+- [Documentation](#documentation)
+- [API](#api)
+  - [`Match`](#match)
+    - [Overview](#overview-1)
+    - [Props](#props)
+  - [`Otherwise`](#otherwise)
+    - [Overview](#overview-2)
+    - [Props](#props-1)
+  - [`When`](#when)
+    - [Overview](#overview-3)
+    - [Props](#props-2)
+  - [`With`](#with)
+    - [Overview](#overview-4)
+    - [Props](#props-3)
+  - [`getPatternMatch`](#getpatternmatch)
+    - [Overview](#overview-5)
+  - [`usePatternMatch`](#usepatternmatch)
+    - [Overview](#overview-6)
+  - [`not`](#not)
+    - [Overview](#overview-7)
+
 # API
 
 ## `Match`
