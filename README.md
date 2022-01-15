@@ -141,6 +141,8 @@ What we have, though, are domain-specific matching/branching solutions, for exam
     - [Overview](#overview-6)
   - [`not`](#not)
     - [Overview](#overview-7)
+- [Roadmap](#roadmap)
+- [Inspirations](#inspirations)
 
 # API
 
@@ -233,3 +235,23 @@ Just like `getPatternMatch`, but as a React hook.
 - It enables you to match on everything but a specific value.
 - It takes a pattern and returns its opposite.
 - It's a re-export of `ts-pattern`'s [`not` function](https://github.com/gvergnaud/ts-pattern#notpattern).
+
+# Roadmap
+
+- [ ] Add unit tests
+- [ ] Document recipes + common use cases
+- [ ] Publish to npm
+- [ ] Restrict the type of `Match`'s children to be only `With`, `When` and `Otherwise`
+- [ ] Support exhaustive matching
+- [ ] Support wildcard patterns
+- [ ] Support extraction of pieces of the input value (aka _selectors_)
+
+# Inspirations
+
+This library has been heavily inspired by:
+
+- [ts-pattern](https://github.com/gvergnaud/ts-pattern): A great library by [Gabriel Vergnaud](https://github.com/gvergnaud) that not only inspired the core and the APIs of `react-match` but is also used by our internals.
+
+- [Daggy](https://github.com/fantasyland/daggy): A great library from the [Fantasy Land](https://github.com/fantasyland) universe that brings sum types to JavaScript. Using its `taggedSum` and `cata` methods, you can get really a really interesting taste of pattern matching.
+
+- [ECMAScript pattern matching proposal](https://github.com/tc39/proposal-pattern-matching): This proposal briefly covers what the JSX syntax would look like. Even though `react-match` didn't quite use it as an inspiration, it was still an interesting reference.
