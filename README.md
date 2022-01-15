@@ -11,6 +11,75 @@
 - Supports predicates and not patterns for complex cases
 - Tiny bundle footprint
 
+## Getting Started
+
+1. Install:
+
+```sh
+npm install react-match
+yarn add react-match
+```
+
+2. Define what is the shape of the object you wanna branch on:
+
+```typescript
+export type Data =
+  | { type: 'text'; content?: string }
+  | { type: 'img'; src?: string };
+
+export type Result =
+  | { type: 'ok'; data: Data }
+  | { type: 'cancel'; error?: Error };
+
+export const result: Result = { type: 'ok', data: { type: 'img' } };
+```
+
+3. Pick one of the two approaches:
+
+3.1. Using [`getPatternMatch`](#getpatternmatch)/[`usePatternMatch`](#usepatternmatch)
+
+This one spares you from passing type parameters to each of your `With`/`When` cases.
+This is ideal when you have only one `Match` within your component and should cover
+most of the scenarios.
+
+```tsx
+import { getPatternMatch } from 'react-match';
+
+const { Match, With, Otherwise } = getPatternMatch<Result, false>();
+
+<Match value={result}>
+  <With<Result, false> type="cancel">Cancel</With>
+  <With<Result, false> type="ok" data={{ type: 'text' }}>
+    OK - Text
+  </With>
+  <With<Result, false> type="ok" data={{ type: 'img' }}>
+    OK - Image
+  </With>
+  <Otherwise>Fallback</Otherwise>
+</Match>;
+```
+
+3.2. Using the original components + providing type parameters
+
+This one is ideal when you have multiple `Match` occurrences within your component.
+The downside is that you'll have to manually pass type parameters to all of your
+`With`/`When` cases.
+
+```tsx
+import { Match, With, Otherwise } from 'react-match';
+
+<Match value={result}>
+  <With<Result, false> type="cancel">Cancel</With>
+  <With<Result, false> type="ok" data={{ type: 'text' }}>
+    OK - Text
+  </With>
+  <With<Result, false> type="ok" data={{ type: 'img' }}>
+    OK - Image
+  </With>
+  <Otherwise>Fallback</Otherwise>
+</Match>;
+```
+
 ## Why Pattern Matching
 
 Pattern matching consists of specifying patterns to which some data should conform, then checking to see if it does, and de-constructing the data according to those patterns.
@@ -45,6 +114,7 @@ What we have, though, are domain-specific matching/branching solutions, for exam
 
 - [Introduction](#introduction)
   - [Overview](#overview)
+  - [Getting Started](#getting-started)
   - [Why Pattern Matching](#why-pattern-matching)
   - [Why react-match](#why-react-match)
 - [Documentation](#documentation)
