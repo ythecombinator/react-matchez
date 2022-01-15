@@ -10,9 +10,13 @@ import {
 import { exceptions, invariant } from '../../_internals/error';
 
 export interface MatchProps<Shape> {
+  /** Entry point to create a pattern-matching expression. */
   value?: Shape;
+  /** The patterns the `value` prop should match. Can be represented as `With`, `When`, and `Otherwise`. */
   children: _MatchChildren<Shape>;
+  /** A default value to be used if nothing matches. If used, then the `Otherwise` component should be omitted. */
   otherwise?: JSX.Element;
+  /** Indicates whether anything that matches should render or only the first match.  */
   firstMatch?: boolean;
 }
 

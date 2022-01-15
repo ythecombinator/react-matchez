@@ -40,3 +40,25 @@ What we have, though, are domain-specific matching/branching solutions, for exam
 - [react-matches](https://github.com/souporserious/react-matches): Declarative matching for media queries
 
 > **react-match** then comes as a first-class-React, generic, strongly-typed, solution that you can use to build your own domain-specific matching solutions—and reduce drastically the `if`/`else`/`switch` boilerplate from your components.
+
+# API
+
+## `Match`
+
+### Overview
+
+This the wrapper for the matching cases. Basically:
+
+- The only required prop are its `children`
+- Valid `children` for it are only: `With`, `When`, and `Otherwise`
+- If you plan on having `With` cases, then you need to pass a `value` prop
+- If you use the `otherwise` prop, then don't use `Otherwise` as a children
+
+### Props
+
+| Name                  | Type                      | Default value | Description                                                                                                 |
+| --------------------- | ------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------- |
+| value                 | Shape                     |               | Entry point to create a pattern-matching expression.                                                        |
+| children _(required)_ | \_MatchChildren&lt;Shape> |               | The patterns the \`value\` prop should match. Can be represented as \`With\`, \`When\`, and \`Otherwise\`.  |
+| otherwise             | Element                   |               | A default value to be used if nothing matches. If used, then the \`Otherwise\` component should be omitted. |
+| firstMatch            | boolean                   |               | Indicates whether anything that matches should render or only the first match.                              |
