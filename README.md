@@ -47,18 +47,31 @@ What we have, though, are domain-specific matching/branching solutions, for exam
 
 ### Overview
 
-This the wrapper for the matching cases. Basically:
-
-- The only required prop are its `children`
-- Valid `children` for it are only: `With`, `When`, and `Otherwise`
-- If you plan on having `With` cases, then you need to pass a `value` prop
-- If you use the `otherwise` prop, then don't use `Otherwise` as a children
+- This component is the wrapper for the matching cases.
+- The only required prop is its `children`.
+- Valid `children` for it are only: `With`, `When`, and `Otherwise`.
+- If you plan on having `With` cases, then you need to pass a `value` prop.
+- If you use the `otherwise` prop, then don't use the `Otherwise` component as children.
 
 ### Props
 
-| Name                  | Type                      | Default value | Description                                                                                                 |
-| --------------------- | ------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------- |
-| value                 | Shape                     |               | Entry point to create a pattern-matching expression.                                                        |
-| children _(required)_ | \_MatchChildren&lt;Shape> |               | The patterns the \`value\` prop should match. Can be represented as \`With\`, \`When\`, and \`Otherwise\`.  |
-| otherwise             | Element                   |               | A default value to be used if nothing matches. If used, then the \`Otherwise\` component should be omitted. |
-| firstMatch            | boolean                   |               | Indicates whether anything that matches should render or only the first match.                              |
+| Name                  | Type                      | Default value | Description                                                                                               |
+| --------------------- | ------------------------- | ------------- | --------------------------------------------------------------------------------------------------------- |
+| value                 | Shape                     |               | Entry point to create a pattern-matching expression.                                                      |
+| children _(required)_ | \_MatchChildren&lt;Shape> |               | The patterns the `value` prop should match. Can be represented as `With`, `When`, and `Otherwise`.        |
+| otherwise             | Element                   |               | A default value to be used if nothing matches. If used, then the `Otherwise` component should be omitted. |
+| firstMatch            | boolean                   |               | Indicates whether anything that matches should render or only the first match.                            |
+
+## Otherwise
+
+### Overview
+
+- This component represents your default/fallback state; meaning its children represent what's going to be rendered when nothing matches your previous `When`/`With` assertions.
+- Shouldn't be used if you've already passed the `otherwise` prop to its `Match` parent.
+- Shouldn't be used more than once within one `Match` parent.
+
+### Props
+
+| Name                  | Type      | Default value | Description                                                              |
+| --------------------- | --------- | ------------- | ------------------------------------------------------------------------ |
+| children _(required)_ | ReactNode |               | Any node to be rendered when nothing matches `With` and `When` siblings. |

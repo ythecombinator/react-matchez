@@ -4,6 +4,7 @@ import { isNil } from 'lodash';
 import { exceptions, invariant } from '../../_internals/error';
 
 export interface OtherwiseProps {
+  /** Any node to be rendered when nothing matches `With` and `When` siblings. */
   children: ReactNode;
 }
 
