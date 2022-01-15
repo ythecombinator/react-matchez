@@ -4,7 +4,11 @@ import { isNil } from 'lodash';
 import { exceptions, invariant } from '../../_internals/error';
 
 export interface WhenProps<Shape> {
+  /** Any node to be rendered when the predicate matches. */
   children: ReactNode;
+  /** Condition to be satisfied for the `children` to be rendered.
+   * If the `value` prop was passed to its `Match` parent, then this predicate
+   * will expose it as its first parameter. */
   predicate: (value?: Shape) => boolean;
 }
 
