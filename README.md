@@ -83,6 +83,8 @@ What we have, though, are domain-specific matching/branching solutions, for exam
 - This component represents a **condition** to be satisfied.
 - Its `children` will be rendered if the `predicate` function returns a truthy value.
 - If you pass the `value` prop to its `Match` parent, it's going to be available as the first parameter of your `predicate` function.
+- It takes one type parameter:
+  - `Shape`: It's the shape of the `value` prop to its `Match` parent. Useful for type inference.
 
 ### Props
 
@@ -98,6 +100,9 @@ What we have, though, are domain-specific matching/branching solutions, for exam
 - This component represents a **shape** to be matched.
 - Its props are the pattern: the shape of value you expect for this branch.
 - Its `children` will be rendered if the shape defined within its other props match the `value` prop passed to its `Match` parent.
+- It takes two type parameters:
+  - `Shape`: It's the shape of the `value` prop to its `Match` parent. Useful for type inference.
+  - `Strict`: Indicates whether you want the compiler to make all the `Shape` properties deeply `required` in order to match.
 
 ### Props
 
