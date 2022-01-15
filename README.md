@@ -6,6 +6,10 @@
 
 ## Overview
 
+<p align="center">
+  <img src="comparison.png" />
+</p>
+
 - Typesafe, with helpful type inference
 - Expressive API
 - Supports predicates and not patterns for complex cases
