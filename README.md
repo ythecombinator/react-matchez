@@ -62,7 +62,7 @@ What we have, though, are domain-specific matching/branching solutions, for exam
 | otherwise             | Element                   |               | A default value to be used if nothing matches. If used, then the `Otherwise` component should be omitted. |
 | firstMatch            | boolean                   |               | Indicates whether anything that matches should render or only the first match.                            |
 
-## Otherwise
+## `Otherwise`
 
 ### Overview
 
@@ -80,13 +80,27 @@ What we have, though, are domain-specific matching/branching solutions, for exam
 
 ### Overview
 
-- This component represents a condition to be satisfied.
+- This component represents a **condition** to be satisfied.
 - Its `children` will be rendered if the `predicate` function returns a truthy value.
 - If you pass the `value` prop to its `Match` parent, it's going to be available as the first parameter of your `predicate` function.
 
 ### Props
 
-| Name                   | Type                       | Default value | Description                                                                                                                                                                         |
-| ---------------------- | -------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| children _(required)_  | ReactNode                  |               | Any node to be rendered when the predicate matches.                                                                                                                                 |
-| predicate _(required)_ | (value?: Shape) => boolean |               | Condition to be satisfied for the \`children\` to be rendered. If the \`value\` prop was passed to its \`Match\` parent, then this predicate will expose it as its first parameter. |
+| Name                   | Type                       | Default value | Description                                                                                                                                                                   |
+| ---------------------- | -------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| children _(required)_  | ReactNode                  |               | Any node to be rendered when the predicate matches.                                                                                                                           |
+| predicate _(required)_ | (value?: Shape) => boolean |               | Condition to be satisfied for the `children` to be rendered. If the `value` prop was passed to its `Match` parent, then this predicate will expose it as its first parameter. |
+
+## `With`
+
+### Overview
+
+- This component represents a **shape** to be matched.
+- Its props are the pattern: the shape of value you expect for this branch.
+- Its `children` will be rendered if the shape defined within its other props match the `value` prop passed to its `Match` parent.
+
+### Props
+
+| Name                  | Type      | Default value | Description                                                                                   |
+| --------------------- | --------- | ------------- | --------------------------------------------------------------------------------------------- |
+| children _(required)_ | ReactNode |               | Any node to be rendered when its other props match the `value` defined on its `Match` parent. |

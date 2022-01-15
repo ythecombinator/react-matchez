@@ -7,7 +7,11 @@ import { exceptions, invariant } from '../../_internals/error';
 export type WithProps<Shape, Strict extends boolean> = DeepPatternUnion<
   Shape,
   Strict
-> & { children: ReactNode };
+> & {
+  /** Any node to be rendered when its other props match the `value`
+   * defined on its `Match` parent. */
+  children: ReactNode;
+};
 
 export function With<Shape, Strict extends boolean>(
   props: WithProps<Shape, Strict>
