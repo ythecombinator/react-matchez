@@ -51,16 +51,20 @@ import { getPatternMatch } from 'react-match';
 
 const { Match, With, Otherwise } = getPatternMatch<Result, false>();
 
-<Match value={result}>
-  <With<Result, false> type="cancel">Cancel</With>
-  <With<Result, false> type="ok" data={{ type: 'text' }}>
-    OK - Text
-  </With>
-  <With<Result, false> type="ok" data={{ type: 'img' }}>
-    OK - Image
-  </With>
-  <Otherwise>Fallback</Otherwise>
-</Match>;
+const Component = () => {
+  return (
+    <Match value={result}>
+      <With type="cancel">Cancel</With>
+      <With type="ok" data={{ type: 'text' }}>
+        OK - Text
+      </With>
+      <With type="ok" data={{ type: 'img' }}>
+        OK - Image
+      </With>
+      <Otherwise>Fallback</Otherwise>
+    </Match>
+  );
+};
 ```
 
 3.2. Using the original components + providing type parameters
@@ -72,16 +76,20 @@ The downside is that you'll have to manually pass type parameters to all of your
 ```tsx
 import { Match, With, Otherwise } from 'react-match';
 
-<Match value={result}>
-  <With<Result, false> type="cancel">Cancel</With>
-  <With<Result, false> type="ok" data={{ type: 'text' }}>
-    OK - Text
-  </With>
-  <With<Result, false> type="ok" data={{ type: 'img' }}>
-    OK - Image
-  </With>
-  <Otherwise>Fallback</Otherwise>
-</Match>;
+const Component = () => {
+  return (
+    <Match value={result}>
+      <With<Result, false> type="cancel">Cancel</With>
+      <With<Result, false> type="ok" data={{ type: 'text' }}>
+        OK - Text
+      </With>
+      <With<Result, false> type="ok" data={{ type: 'img' }}>
+        OK - Image
+      </With>
+      <Otherwise>Fallback</Otherwise>
+    </Match>
+  );
+};
 ```
 
 ## Why Pattern Matching
