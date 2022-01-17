@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { isNil } from 'lodash';
+import isNil from 'lodash/isNil';
 
 import { DeepPatternUnion } from '../../_internals/types';
 import { exceptions, invariant } from '../../_internals/error';

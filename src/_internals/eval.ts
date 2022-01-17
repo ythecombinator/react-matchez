@@ -1,5 +1,7 @@
 import { Children, createElement, Fragment, ReactNode } from 'react';
-import { isEmpty, isNull } from 'lodash';
+import isEmpty from 'lodash/isEmpty';
+import isNull from 'lodash/isNull';
+
 import { isMatching } from 'ts-pattern';
 
 import { When, WhenProps } from '../components/When';
