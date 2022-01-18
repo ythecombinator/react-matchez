@@ -10,7 +10,7 @@ import {
   Otherwise,
 } from '../components';
 
-export const getPatternMatch = <Shape, Strict extends boolean>(
+export const getPatternMatch = <Shape extends {}, Strict extends boolean>(
   /** Used here to mark the shape of the `value` prop to
    * be passed to the `Match` component.
    * */
@@ -31,7 +31,7 @@ export const getPatternMatch = <Shape, Strict extends boolean>(
   return { Match: TypedMatch, When: TypedWhen, With: TypedWith, Otherwise };
 };
 
-export const usePatternMatch = <Shape, Strict extends boolean>(
+export const usePatternMatch = <Shape extends {}, Strict extends boolean>(
   /** Used here to mark the shape of the `value` prop to
    * be passed to the `Match` component.
    * */

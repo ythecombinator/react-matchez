@@ -9,7 +9,7 @@ import {
 } from '../../_internals/eval';
 import { exceptions, invariant } from '../../_internals/error';
 
-export interface MatchProps<Shape> {
+export interface MatchProps<Shape extends {}> {
   /** Entry point to create a pattern-matching expression. */
   value?: Shape;
   /** The patterns the `value` prop should match. Can be represented as `With`, `When`, and `Otherwise`. */
@@ -20,15 +20,15 @@ export interface MatchProps<Shape> {
   firstMatch?: boolean;
 }
 
-type _MatchChildren<Shape> =
+type _MatchChildren<Shape extends {}> =
   | ReactElement<WithProps<Shape, boolean>>
-  | ReactElement<WithProps<Shape, boolean>>[]
+  | Array<ReactElement<WithProps<Shape, boolean>>>
   | ReactElement<WhenProps<Shape>>
-  | ReactElement<WhenProps<Shape>>[]
+  | Array<ReactElement<WhenProps<Shape>>>
   | ReactElement<OtherwiseProps>
-  | ReactElement<OtherwiseProps>[];
+  | Array<ReactElement<OtherwiseProps>>;
 
-export function Match<Shape>(props: MatchProps<Shape>) {
+export function Match<Shape extends {}>(props: MatchProps<Shape>) {
   const { children, value, firstMatch = false, otherwise } = props;
 
   const noChildren = Children.count(children) === 0;
@@ -39,7 +39,7 @@ export function Match<Shape>(props: MatchProps<Shape>) {
     parseChildren(elements);
 
   const whenMatches = evaluate.when(whenExpressions, value);
-  const withMatches = evaluate.with(withExpressions, value);
+  const withMatches = evaluate.with(withExpressions, value!);
   const otherwiseMatch = evaluate.otherwise(otherwise, otherwiseExpressions);
 
   return elementWithMetadataToElement(

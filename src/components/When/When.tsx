@@ -3,7 +3,7 @@ import isNil from 'lodash/isNil';
 
 import { exceptions, invariant } from '../../_internals/error';
 
-export interface WhenProps<Shape> {
+export interface WhenProps<Shape extends {}> {
   /** Any node to be rendered when the predicate matches. */
   children: ReactNode;
   /** Condition to be satisfied for the `children` to be rendered.
@@ -12,7 +12,7 @@ export interface WhenProps<Shape> {
   predicate: (value?: Shape) => boolean;
 }
 
-export function When<Shape>(props: WhenProps<Shape>) {
+export function When<Shape extends {}>(props: WhenProps<Shape>) {
   const { children, predicate } = props;
 
   invariant(isNil(predicate), exceptions.when.no_predicate);
