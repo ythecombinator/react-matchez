@@ -13,7 +13,7 @@
 - Typesafe, with helpful type inference
 - Expressive API
 - Supports predicates and not patterns for complex cases
-- Tiny bundle footprint
+- Tiny bundle footprint (`~7.4 kB`)
 
 ## Getting Started
 
