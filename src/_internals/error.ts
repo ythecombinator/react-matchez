@@ -1,7 +1,7 @@
 export const exceptions = {
   match: {
     no_children: `<Match> was provided with no children. Valid children are either <With> or <When> components.`,
-    no_otherwise: `<Match> was provided with no otherwise case. A valid otherwise case should be provided either using the 'otherwise' prop or the <Otherwise> component.`,
+    no_otherwise: `<Match> was provided with no otherwise case. A valid otherwise case should be provided using the <Otherwise> component.`,
     multiple_otherwise: `<Match> was provided with multiple otherwise cases.`,
     invalid_children: `<Match> was provided with invalid children. Valid children are: <With>, <When> or <Otherwise>.`,
   },

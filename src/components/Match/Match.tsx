@@ -19,8 +19,6 @@ export interface MatchProps<Shape extends {}> {
   value?: Shape;
   /** The patterns the `value` prop should match. Can be represented as `With`, `When`, and `Otherwise`. */
   children: _MatchChildren<Shape>;
-  /** A default value to be used if nothing matches. If used, then the `Otherwise` component should be omitted. */
-  otherwise?: JSX.Element;
   /** Indicates whether anything that matches should render or only the first match.  */
   firstMatch?: boolean;
 }
@@ -36,7 +34,7 @@ type _MatchChildren<Shape extends {}> =
   | Array<ReactElement<OtherwiseProps>>;
 
 export function Match<Shape extends {}>(props: MatchProps<Shape>) {
-  const { children, value, firstMatch = false, otherwise } = props;
+  const { children, value, firstMatch = false } = props;
 
   const noChildren = Children.count(children) === 0;
   invariant(noChildren, exceptions.match.no_children);
@@ -48,7 +46,7 @@ export function Match<Shape extends {}>(props: MatchProps<Shape>) {
   const whenMatches = evaluate.when(whenExpressions, value);
   const withMatches = evaluate.with(withExpressions, value!);
   const exactMatches = evaluate.exact(withExpressions, value!);
-  const otherwiseMatch = evaluate.otherwise(otherwise, otherwiseExpressions);
+  const otherwiseMatch = evaluate.otherwise(otherwiseExpressions);
 
   return elementWithMetadataToElement(
     [...whenMatches, ...withMatches, ...exactMatches],

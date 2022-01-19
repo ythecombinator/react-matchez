@@ -1,13 +1,11 @@
 import { Children, createElement, Fragment, ReactNode } from 'react';
 import { isMatching } from 'ts-pattern';
 import isEmpty from 'lodash/isEmpty';
-import isNull from 'lodash/isNull';
 import pick from 'lodash/pick';
 
 import { When, WhenProps } from '../components/When';
 import { With, WithProps } from '../components/With';
 import { Exact, ExactProps } from '../components/Exact';
-import { MatchProps } from '../components/Match';
 import { Otherwise } from '../components/Otherwise';
 
 import {
@@ -143,19 +141,15 @@ export function evaluateExactExpression<Shape extends {}>(
 }
 
 export function evaluateOtherwiseExpression<Shape extends {}>(
-  otherwiseProp: MatchProps<{}>['otherwise'],
-  otherwiseChildren: Array<ElementWithMetadata<Shape>>
+  otherwiseExpressions: Array<ElementWithMetadata<Shape>>
 ) {
-  const noCase = isEmpty(otherwiseChildren) && isNull(otherwiseProp);
+  const noCase = isEmpty(otherwiseExpressions);
   invariant(noCase, exceptions.match.no_otherwise);
 
-  const multipleCases = !isEmpty(otherwiseChildren) && Boolean(otherwiseProp);
-  invariant(multipleCases, exceptions.match.multiple_otherwise);
-
-  const multipleChildren = otherwiseChildren.length > 1;
+  const multipleChildren = otherwiseExpressions.length > 1;
   invariant(multipleChildren, exceptions.match.multiple_otherwise);
 
-  return otherwiseProp ?? otherwiseChildren[0].element;
+  return otherwiseExpressions[0].element;
 }
 
 export const evaluate = {
@@ -217,7 +211,7 @@ export function nodesToElementWithMetadata<Shape extends {}>(
 export function elementWithMetadataToElement<Shape extends {}>(
   children: Array<ElementWithMetadataUnion<Shape>>,
   isFirst: boolean,
-  otherwise: MatchProps<Shape>['otherwise']
+  otherwise: JSX.Element
 ) {
   const elements = [...children]
     .sort((a, b) => (a.position > b.position ? 1 : -1))
