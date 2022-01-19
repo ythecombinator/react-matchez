@@ -6,8 +6,9 @@ import pick from 'lodash/pick';
 
 import { When, WhenProps } from '../components/When';
 import { With, WithProps } from '../components/With';
+import { Exact, ExactProps } from '../components/Exact';
+import { MatchProps } from '../components/Match';
 import { Otherwise } from '../components/Otherwise';
-import { MatchProps } from '../components/Match/Match';
 
 import {
   ElementWithMetadata,
@@ -31,8 +32,14 @@ export function isWhen<Shape extends {}>(
 
 export function isWith<Shape extends {}>(
   child: ElementWithMetadataUnion<Shape>
-): child is ElementWithMetadata<WithProps<Shape, boolean>> {
+): child is ElementWithMetadata<WithProps<Shape>> {
   return child.element.type === With;
+}
+
+export function isExact<Shape extends {}>(
+  child: ElementWithMetadataUnion<Shape>
+): child is ElementWithMetadata<ExactProps<Shape>> {
+  return child.element.type === Exact;
 }
 
 export function isOtherwise<Shape extends {}>(
@@ -44,6 +51,7 @@ export function isOtherwise<Shape extends {}>(
 export const is = {
   with: isWith,
   when: isWhen,
+  exact: isExact,
   otherwise: isOtherwise,
 };
 
@@ -59,17 +67,19 @@ export function whenMatcher<Shape extends {}>(value?: Shape) {
 }
 
 export function withMatcher<Shape extends {}>(value: Shape) {
-  return (instance: MatchWithCase<Shape>) => {
-    const { strict, pattern } = instance;
-    const baseObj = strict ? value : pick(value, Object.keys(pattern));
-    const isMatch = isMatching(baseObj, instance.pattern);
-    return isMatch;
-  };
+  return (instance: MatchWithCase<Shape>) =>
+    isMatching(pick(value, Object.keys(instance.pattern)), instance.pattern);
+}
+
+export function exactMatcher<Shape extends {}>(value: Shape) {
+  return (instance: MatchWithCase<Shape>) =>
+    isMatching(value, instance.pattern);
 }
 
 export const match = {
   with: withMatcher,
   when: whenMatcher,
+  exact: exactMatcher,
 };
 
 // ----------------------------------------------------------------------
@@ -92,8 +102,9 @@ export function evaluateWhenExpression<Shape extends {}>(
   }));
 }
 
-export function evaluateWithExpression<Shape extends {}>(
-  childrenArr: Array<ElementWithMetadata<WithProps<Shape, boolean>>>,
+export function evaluateShapeExpression<Shape extends {}>(
+  matcher: typeof withMatcher | typeof exactMatcher,
+  childrenArr: Array<ElementWithMetadata<WithProps<Shape>>>,
   value: Shape
 ) {
   if (childrenArr.length === 0) {
@@ -101,24 +112,34 @@ export function evaluateWithExpression<Shape extends {}>(
   }
 
   const cases = childrenArr.map((children) => {
-    const {
-      children: childrenChild,
-      strict,
-      ...childrenPattern
-    } = children.element.props;
+    const { children: childrenChild, ...childrenPattern } =
+      children.element.props;
 
     return {
       element: childrenChild,
       position: children.position,
-      strict,
       pattern: childrenPattern as PatternUnion<Shape>,
     } as MatchWithCase<Shape>;
   });
 
-  return cases.filter(match.with(value)).map((item) => ({
+  return cases.filter(matcher(value)).map((item) => ({
     element: item.element,
     position: item.position,
   })) as Array<ElementWithMetadata<Shape>>;
+}
+
+export function evaluateWithExpression<Shape extends {}>(
+  childrenArr: Array<ElementWithMetadata<WithProps<Shape>>>,
+  value: Shape
+) {
+  return evaluateShapeExpression(match.with, childrenArr, value);
+}
+
+export function evaluateExactExpression<Shape extends {}>(
+  childrenArr: Array<ElementWithMetadata<WithProps<Shape>>>,
+  value: Shape
+) {
+  return evaluateShapeExpression(match.exact, childrenArr, value);
 }
 
 export function evaluateOtherwiseExpression<Shape extends {}>(
@@ -139,6 +160,7 @@ export function evaluateOtherwiseExpression<Shape extends {}>(
 
 export const evaluate = {
   with: evaluateWithExpression,
+  exact: evaluateExactExpression,
   when: evaluateWhenExpression,
   otherwise: evaluateOtherwiseExpression,
 };
@@ -153,12 +175,12 @@ export function parseChildren<Shape extends {}>(
   children: Array<
     | ElementWithMetadata<Shape>
     | ElementWithMetadata<WhenProps<Shape>>
-    | ElementWithMetadata<WithProps<Shape, boolean>>
+    | ElementWithMetadata<WithProps<Shape>>
   >
 ) {
   const whenExpressions: Array<ElementWithMetadata<WhenProps<Shape>>> = [];
-  const withExpressions: Array<ElementWithMetadata<WithProps<Shape, boolean>>> =
-    [];
+  const withExpressions: Array<ElementWithMetadata<WithProps<Shape>>> = [];
+  const exactExpressions: Array<ElementWithMetadata<ExactProps<Shape>>> = [];
   const otherwiseExpressions: Array<ElementWithMetadata<{}>> = [];
 
   children.forEach((child) => {
@@ -166,6 +188,8 @@ export function parseChildren<Shape extends {}>(
       whenExpressions.push(child);
     } else if (is.with(child)) {
       withExpressions.push(child);
+    } else if (is.exact(child)) {
+      exactExpressions.push(child);
     } else if (is.otherwise(child)) {
       otherwiseExpressions.push(child);
     } else {
@@ -173,7 +197,12 @@ export function parseChildren<Shape extends {}>(
     }
   });
 
-  return { whenExpressions, withExpressions, otherwiseExpressions };
+  return {
+    whenExpressions,
+    withExpressions,
+    exactExpressions,
+    otherwiseExpressions,
+  };
 }
 
 export function nodesToElementWithMetadata<Shape extends {}>(

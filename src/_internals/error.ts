@@ -9,6 +9,10 @@ export const exceptions = {
     no_shape: `<With> was provided with no shape props to be matched.`,
     no_children: `<With> was provided with no children to be rendered.`,
   },
+  exact: {
+    no_shape: `<Exact> was provided with no shape props to be matched.`,
+    no_children: `<Exact> was provided with no children to be rendered.`,
+  },
   when: {
     no_predicate: `<When> was provided with no predicate prop.`,
     no_children: `<When> was provided with no children to be rendered.`,

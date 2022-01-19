@@ -4,17 +4,17 @@ import isNil from 'lodash/isNil';
 import { DeepPatternUnion } from '../../_internals/types';
 import { exceptions, invariant } from '../../_internals/error';
 
-export type WithProps<Shape extends {}> = DeepPatternUnion<Shape, false> & {
+export type ExactProps<Shape extends {}> = DeepPatternUnion<Shape, true> & {
   /** Any node to be rendered when its other props match the `value`
    * defined on its `Match` parent. */
   children: ReactNode;
 };
 
-export function With<Shape extends {}>(props: WithProps<Shape>) {
+export function Exact<Shape extends {}>(props: ExactProps<Shape>) {
   const { children, ...otherProps } = props;
 
-  invariant(isNil(otherProps), exceptions.with.no_shape);
-  invariant(isNil(children), exceptions.with.no_shape);
+  invariant(isNil(otherProps), exceptions.exact.no_shape);
+  invariant(isNil(children), exceptions.exact.no_shape);
 
   return <>{children}</>;
 }

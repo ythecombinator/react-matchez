@@ -1,6 +1,11 @@
 import { Children, ReactElement } from 'react';
 
-import { OtherwiseProps, WhenProps, WithProps } from '../../components';
+import {
+  OtherwiseProps,
+  WhenProps,
+  WithProps,
+  ExactProps,
+} from '../../components';
 import {
   nodesToElementWithMetadata,
   parseChildren,
@@ -21,8 +26,10 @@ export interface MatchProps<Shape extends {}> {
 }
 
 type _MatchChildren<Shape extends {}> =
-  | ReactElement<WithProps<Shape, boolean>>
-  | Array<ReactElement<WithProps<Shape, boolean>>>
+  | ReactElement<WithProps<Shape>>
+  | Array<ReactElement<WithProps<Shape>>>
+  | ReactElement<ExactProps<Shape>>
+  | Array<ReactElement<ExactProps<Shape>>>
   | ReactElement<WhenProps<Shape>>
   | Array<ReactElement<WhenProps<Shape>>>
   | ReactElement<OtherwiseProps>
@@ -40,10 +47,11 @@ export function Match<Shape extends {}>(props: MatchProps<Shape>) {
 
   const whenMatches = evaluate.when(whenExpressions, value);
   const withMatches = evaluate.with(withExpressions, value!);
+  const exactMatches = evaluate.exact(withExpressions, value!);
   const otherwiseMatch = evaluate.otherwise(otherwise, otherwiseExpressions);
 
   return elementWithMetadataToElement(
-    [...whenMatches, ...withMatches],
+    [...whenMatches, ...withMatches, ...exactMatches],
     firstMatch,
     otherwiseMatch
   );

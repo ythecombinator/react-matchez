@@ -4,6 +4,7 @@ import { NotPattern } from 'ts-pattern/lib/types/Pattern';
 
 import { WhenProps } from '../components/When';
 import { WithProps } from '../components/With';
+import { ExactProps } from '../components/Exact';
 
 export type PatternUnion<Shape extends {}> = Pattern<Shape> | NotPattern<Shape>;
 
@@ -14,32 +15,32 @@ export interface ElementWithMetadata<Shape extends {}> {
 
 export type ElementWithMetadataUnion<Shape extends {}> =
   | ElementWithMetadata<Shape>
-  | ElementWithMetadata<WithProps<Shape, boolean>>
+  | ElementWithMetadata<WithProps<Shape>>
+  | ElementWithMetadata<ExactProps<Shape>>
   | ElementWithMetadata<WhenProps<Shape>>;
 
 export interface MatchWithCase<Shape extends {}>
   extends ElementWithMetadata<Shape> {
   pattern: PatternUnion<Shape>;
-  strict: boolean;
 }
 
-export type DeepPatternUnion<Src, Strict extends boolean> = Src extends Function
+export type DeepPatternUnion<Src, Exact extends boolean> = Src extends Function
   ? Src
   : Src extends Array<infer U>
-  ? _DeepPatternUnionArray<U, Strict>
+  ? _DeepPatternUnionArray<U, Exact>
   : Src extends object
-  ? Strict extends true
-    ? _DeepPatternUnionObjectStrict<Src, Strict>
-    : _DeepPatternUnionObject<Src, Strict>
+  ? Exact extends true
+    ? _DeepPatternUnionObjectExact<Src, Exact>
+    : _DeepPatternUnionObject<Src, Exact>
   : Src | undefined;
 
-interface _DeepPatternUnionArray<Src, Strict extends boolean>
-  extends Array<DeepPatternUnion<NotPattern<Src>, Strict>> {}
+interface _DeepPatternUnionArray<Src, Exact extends boolean>
+  extends Array<DeepPatternUnion<NotPattern<Src>, Exact>> {}
 
-type _DeepPatternUnionObject<Src, Strict extends boolean> = {
-  [Key in keyof Src]: DeepPatternUnion<PatternUnion<Src[Key]>, Strict>;
+type _DeepPatternUnionObject<Src, Exact extends boolean> = {
+  [Key in keyof Src]+?: DeepPatternUnion<PatternUnion<Src[Key]>, Exact>;
 };
 
-type _DeepPatternUnionObjectStrict<Src, Strict extends boolean> = {
-  [Key in keyof Src]-?: DeepPatternUnion<PatternUnion<Src[Key]>, Strict>;
+type _DeepPatternUnionObjectExact<Src, Exact extends boolean> = {
+  [Key in keyof Src]-?: DeepPatternUnion<PatternUnion<Src[Key]>, Exact>;
 };
