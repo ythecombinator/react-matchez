@@ -102,7 +102,7 @@ export function evaluateWhenExpression<Shape extends {}>(
 
 export function evaluateShapeExpression<Shape extends {}>(
   matcher: typeof withMatcher | typeof exactMatcher,
-  childrenArr: Array<ElementWithMetadata<WithProps<Shape>>>,
+  childrenArr: Array<ElementWithMetadata<WithProps<Shape> | ExactProps<Shape>>>,
   value: Shape
 ) {
   if (childrenArr.length === 0) {
@@ -134,7 +134,7 @@ export function evaluateWithExpression<Shape extends {}>(
 }
 
 export function evaluateExactExpression<Shape extends {}>(
-  childrenArr: Array<ElementWithMetadata<WithProps<Shape>>>,
+  childrenArr: Array<ElementWithMetadata<ExactProps<Shape>>>,
   value: Shape
 ) {
   return evaluateShapeExpression(match.exact, childrenArr, value);

@@ -40,12 +40,16 @@ export function Match<Shape extends {}>(props: MatchProps<Shape>) {
   invariant(noChildren, exceptions.match.no_children);
 
   const elements = nodesToElementWithMetadata<Shape>(children);
-  const { whenExpressions, withExpressions, otherwiseExpressions } =
-    parseChildren(elements);
+  const {
+    whenExpressions,
+    withExpressions,
+    exactExpressions,
+    otherwiseExpressions,
+  } = parseChildren(elements);
 
   const whenMatches = evaluate.when(whenExpressions, value);
   const withMatches = evaluate.with(withExpressions, value!);
-  const exactMatches = evaluate.exact(withExpressions, value!);
+  const exactMatches = evaluate.exact(exactExpressions, value!);
   const otherwiseMatch = evaluate.otherwise(otherwiseExpressions);
 
   return elementWithMetadataToElement(
