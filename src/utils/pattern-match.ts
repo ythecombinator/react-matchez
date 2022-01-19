@@ -3,6 +3,8 @@ import { ComponentType } from 'react';
 import {
   Match,
   MatchProps,
+  Switch,
+  SwitchProps,
   When,
   WhenProps,
   With,
@@ -24,12 +26,14 @@ export const getPatternMatch = <Shape extends {}>(
    * */
 ) => {
   const TypedMatch = Match as ComponentType<MatchProps<Shape>>;
+  const TypedSwitch = Switch as ComponentType<SwitchProps<Shape>>;
   const TypedWhen = When as ComponentType<WhenProps<Shape>>;
   const TypedWith = With as ComponentType<WithProps<Shape>>;
   const TypedExact = Exact as ComponentType<ExactProps<Shape>>;
 
   return {
     Match: TypedMatch,
+    Switch: TypedSwitch,
     When: TypedWhen,
     With: TypedWith,
     Exact: TypedExact,
