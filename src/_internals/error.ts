@@ -24,6 +24,6 @@ export const exceptions = {
 
 export const invariant = (condition: boolean, exception: string) => {
   if (condition) {
-    throw new Error(`react-match invariant violation: ${exception}`);
+    throw new Error(`react-matchez invariant violation: ${exception}`);
   }
 };

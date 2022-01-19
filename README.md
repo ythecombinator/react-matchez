@@ -20,8 +20,8 @@
 1. Install:
 
 ```sh
-npm install react-match
-yarn add react-match
+npm install react-matchez
+yarn add react-matchez
 ```
 
 2. Define what is the shape of the object you wanna branch on:
@@ -47,7 +47,7 @@ This is ideal when you have only one `Match` within your component and should co
 most of the scenarios.
 
 ```tsx
-import { getPatternMatch } from 'react-match';
+import { getPatternMatch } from 'react-matchez';
 
 const { Match, With, Otherwise } = getPatternMatch<Result, false>();
 
@@ -74,7 +74,7 @@ The downside is that you'll have to manually pass type parameters to all of your
 `With`/`When` cases.
 
 ```tsx
-import { Match, With, Otherwise } from 'react-match';
+import { Match, With, Otherwise } from 'react-matchez';
 
 const Component = () => {
   return (
@@ -98,7 +98,7 @@ Pattern matching consists of specifying patterns to which some data should confo
 
 This is implemented out of the box in languages like Haskell, Rust, and Elixir and has proven to be more powerful and less verbose than imperative alternatives (`if`/`else`/`switch` statements), especially when branching on complex data structures.
 
-## Why react-match
+## Why react-matchez
 
 Unfortunately, JavaScript and TypeScript weren’t designed with pattern matching in mind. Fortunately, there are some great initiatives to address it, e.g.:
 
@@ -120,7 +120,7 @@ What we have, though, are domain-specific matching/branching solutions, for exam
 - [react-device-detect](https://github.com/duskload/react-device-detect): Declarative matching for device type
 - [react-matches](https://github.com/souporserious/react-matches): Declarative matching for media queries
 
-> **react-match** then comes as a first-class-React, generic, strongly-typed, solution that you can use to build your own domain-specific matching solutions—and reduce drastically the `if`/`else`/`switch` boilerplate from your components.
+> **react-matchez** then comes as a first-class-React, generic, strongly-typed, solution that you can use to build your own domain-specific matching solutions—and reduce drastically the `if`/`else`/`switch` boilerplate from your components.
 
 # Documentation
 
@@ -128,7 +128,7 @@ What we have, though, are domain-specific matching/branching solutions, for exam
   - [Overview](#overview)
   - [Getting Started](#getting-started)
   - [Why Pattern Matching](#why-pattern-matching)
-  - [Why react-match](#why-react-match)
+  - [Why react-matchez](#why-react-matchez)
 - [Documentation](#documentation)
 - [API](#api)
   - [`Match`](#match)
@@ -258,8 +258,8 @@ Just like `getPatternMatch`, but as a React hook.
 
 This library has been heavily inspired by:
 
-- [ts-pattern](https://github.com/gvergnaud/ts-pattern): A great library by [Gabriel Vergnaud](https://github.com/gvergnaud) that not only inspired the core and the APIs of `react-match` but is also used by our internals.
+- [ts-pattern](https://github.com/gvergnaud/ts-pattern): A great library by [Gabriel Vergnaud](https://github.com/gvergnaud) that not only inspired the core and the APIs of `react-matchez` but is also used by our internals.
 
 - [Daggy](https://github.com/fantasyland/daggy): A great library from the [Fantasy Land](https://github.com/fantasyland) universe that brings sum types to JavaScript. Using its `taggedSum` and `cata` methods, you can get really a really interesting taste of pattern matching.
 
-- [ECMAScript pattern matching proposal](https://github.com/tc39/proposal-pattern-matching): This proposal briefly covers what the JSX syntax would look like. Even though `react-match` didn't quite use it as an inspiration, it was still an interesting reference.
+- [ECMAScript pattern matching proposal](https://github.com/tc39/proposal-pattern-matching): This proposal briefly covers what the JSX syntax would look like. Even though `react-matchez` didn't quite use it as an inspiration, it was still an interesting reference.

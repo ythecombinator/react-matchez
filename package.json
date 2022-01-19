@@ -17,7 +17,6 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -35,16 +34,16 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "react-match",
+  "name": "react-matchez",
   "author": "Matheus Albuquerque",
-  "module": "dist/react-match.esm.js",
+  "module": "dist/react-matchez.esm.js",
   "size-limit": [
     {
-      "path": "dist/react-match.cjs.production.min.js",
+      "path": "dist/react-matchez.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/react-match.esm.js",
+      "path": "dist/react-matchez.esm.js",
       "limit": "10 KB"
     }
   ],
@@ -72,6 +71,8 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
+    "react-docgen-typescript": "^2.2.2",
+    "react-docgen-typescript-markdown-render": "^0.2.5",
     "ts-pattern": "^3.3.4"
   }
 }
