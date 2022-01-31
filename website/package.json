@@ -1,0 +1,65 @@
+{
+  "name": "website",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "yarn run build:changelog && TYPEDOC_WATCH=true docusaurus start",
+    "build": "yarn run build:changelog && TYPEDOC_WATCH=false docusaurus build",
+    "build:changelog": "echo '---' > ./docs/CHANGELOG.md && echo 'id: changelog' >> ./docs/CHANGELOG.md && echo 'title: Changelog' >> ./docs/CHANGELOG.md && echo '---' >> ./docs/CHANGELOG.md && cat ../CHANGELOG.md >> ./docs/CHANGELOG.md ",
+    "swizzle": "docusaurus swizzle --danger",
+    "deploy": "docusaurus deploy",
+    "serve": "docusaurus serve",
+    "clear": "docusaurus clear"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {
+    "@docusaurus/core": "2.0.0-beta.14",
+    "@docusaurus/plugin-google-gtag": "2.0.0-beta.14",
+    "@docusaurus/plugin-sitemap": "2.0.0-beta.14",
+    "@docusaurus/preset-classic": "2.0.0-beta.14",
+    "@emotion/react": "^11.7.1",
+    "autoprefixer": "^10.4.2",
+    "clsx": "^1.1.1",
+    "docusaurus-plugin-typedoc": "^0.16.7",
+    "docusaurus-tailwindcss": "^0.1.0",
+    "postprocessing": "^6.22.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-syntax-highlighter": "^15.4.5",
+    "tailwindcss": "^3.0.15",
+    "tailwindcss-classnames": "^3.0.2",
+    "three": "^0.131.3"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "2.0.0-beta.14",
+    "@trivago/prettier-plugin-sort-imports": "^3.1.1",
+    "@tsconfig/docusaurus": "^1.0.4",
+    "@types/react": "^17.0.38",
+    "@types/react-helmet": "^6.1.5",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/react-syntax-highlighter": "^13.5.2",
+    "postcss": "^8.4.5",
+    "postcss-import": "^14.0.2",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.2.3",
+    "prettier": "2.5.1",
+    "typedoc": "^0.22.11",
+    "typedoc-plugin-markdown": "^3.11.12",
+    "typescript": "^4.5.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.docusaurus": true
+  },
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.docusaurus": true
+  },
+  "editor.formatOnSave": true
+}

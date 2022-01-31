@@ -1,0 +1,6 @@
+{
+  "allReflectionsHaveOwnDocument": true,
+  "readme": "docs/introduction_api.md",
+  "name": "API",
+  "categorizeByGroup": true
+}
