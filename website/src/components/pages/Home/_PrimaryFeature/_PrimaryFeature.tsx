@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
 
-import SyntaxHighlighter from 'components/SyntaxHighlighter';
-import Typography from 'components/Typography';
+import SyntaxHighlighter from 'components/shared/SyntaxHighlighter';
+import Typography from 'components/shared/Typography';
 
-import { usePatternMatch } from '../../../../../dist';
+import { usePatternMatch } from '../../../../../../dist';
 import * as styles from './_PrimaryFeature.styles';
 
 interface PrimaryFeatureCodeSnippetProps {

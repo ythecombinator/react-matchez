@@ -4,7 +4,7 @@ import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 import Layout from '@theme/Layout';
 
-import Separator from 'components/Separator';
+import Separator from 'components/shared/Separator';
 
 import { updateDarkModeClass, useDarkModeObserver } from 'utils/dark-mode';
 

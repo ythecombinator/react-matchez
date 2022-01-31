@@ -3,7 +3,7 @@ const { resolve } = require('path');
 module.exports = {
   title: 'react-matchez',
   tagline: 'Declarative, typed, pattern matching for React',
-  url: 'https://github.com/ythecombinator/react-match',
+  url: 'https://docusaurus-2.netlify.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -71,7 +71,7 @@ module.exports = {
           position: 'right',
         },
         {
-          to: 'sadsadassd',
+          to: 'https://github.com/ythecombinator/react-match',
           label: 'Demo',
           className:
             'btn mr-2 px-6 py-2 text-white font-bold uppercase bg-blue-600 hover:text-white hover:bg-blue-700',
@@ -105,7 +105,7 @@ module.exports = {
           customCss: [require.resolve('./src/styles/custom.css')],
         },
         gtag: {
-          trackingID: '',
+          trackingID: 'UA-58120604-12',
         },
       },
     ],

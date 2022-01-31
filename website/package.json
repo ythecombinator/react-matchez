@@ -25,13 +25,11 @@
     "clsx": "^1.1.1",
     "docusaurus-plugin-typedoc": "^0.16.7",
     "docusaurus-tailwindcss": "^0.1.0",
-    "postprocessing": "^6.22.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-syntax-highlighter": "^15.4.5",
     "tailwindcss": "^3.0.15",
-    "tailwindcss-classnames": "^3.0.2",
-    "three": "^0.131.3"
+    "tailwindcss-classnames": "^3.0.2"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.0.0-beta.14",

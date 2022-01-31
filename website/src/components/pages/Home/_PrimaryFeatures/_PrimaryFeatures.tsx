@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 
 import heroVideo from '@site/static/img/hero.mp4';
 
-import Typography from 'components/Typography';
+import Typography from 'components/shared/Typography';
 
 import PrimaryFeature from '../_PrimaryFeature';
 import * as styles from './_PrimaryFeatures.styles';

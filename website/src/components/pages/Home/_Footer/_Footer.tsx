@@ -2,8 +2,8 @@ import React, { FunctionComponent } from 'react';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import Button from 'components/Button';
-import Typography from 'components/Typography';
+import Button from 'components/shared/Button';
+import Typography from 'components/shared/Typography';
 
 import * as styles from './_Footer.styles';
 

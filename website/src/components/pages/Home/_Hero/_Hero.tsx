@@ -1,15 +1,12 @@
 import React, { FunctionComponent, Suspense, lazy } from 'react';
 
-import BrowserOnly from '@docusaurus/BrowserOnly';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import heroVideo from '@site/static/img/hero.mp4';
 
-import Button from 'components/Button';
+import Button from 'components/shared/Button';
 
 import * as styles from './_Hero.styles';
-
-const LazyAnimationShader = lazy(() => import('components/AnimationShader'));
 
 export const Hero: FunctionComponent = () => {
   const fallback = (
@@ -33,14 +30,6 @@ export const Hero: FunctionComponent = () => {
         isolation: 'isolate',
       }}
     >
-      <BrowserOnly fallback={fallback}>
-        {() => (
-          <Suspense fallback={fallback}>
-            <LazyAnimationShader />
-          </Suspense>
-        )}
-      </BrowserOnly>
-
       <div className={styles.container}>
         {/* Title */}
         <div className={styles.titleOuterContainer}>

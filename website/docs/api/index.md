@@ -7,12 +7,6 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
----
-id: introduction_api
-title: Test
-sidebar_label: Test
----
-
 In this section, you will find all the possible configurations and types related
 to react-matchez.
 

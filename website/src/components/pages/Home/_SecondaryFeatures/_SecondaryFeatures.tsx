@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 
-import Card from 'components/Card';
-import Typography from 'components/Typography';
+import Card from 'components/shared/Card';
+import Typography from 'components/shared/Typography';
 
 import * as styles from './_SecondaryFeatures.styles';
 

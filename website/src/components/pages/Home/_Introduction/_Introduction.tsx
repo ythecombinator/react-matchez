@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 
 import Logo from '@site/static/img/logo.svg';
 
-import Typography from 'components/Typography';
+import Typography from 'components/shared/Typography';
 
 import * as styles from './_Introduction.styles';
 

@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
-import Typography from 'components/Typography';
+import Typography from 'components/shared/Typography';
 
 import * as styles from './Card.styles';
 
