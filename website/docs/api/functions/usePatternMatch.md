@@ -35,4 +35,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[src/utils/pattern-match.ts:44](https://github.com/ythecombinator/react-matchez/blob/f44ba50/src/utils/pattern-match.ts#L44)
+[src/utils/pattern-match.ts:44](https://github.com/ythecombinator/react-matchez/blob/b285763/src/utils/pattern-match.ts#L44)

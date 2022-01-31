@@ -22,7 +22,7 @@ The patterns the `value` prop should match. Can be represented as `With`, `When`
 
 #### Defined in
 
-[src/components/Match/Match.tsx:21](https://github.com/ythecombinator/react-matchez/blob/f44ba50/src/components/Match/Match.tsx#L21)
+[src/components/Match/Match.tsx:21](https://github.com/ythecombinator/react-matchez/blob/b285763/src/components/Match/Match.tsx#L21)
 
 ___
 
@@ -34,7 +34,7 @@ Indicates whether anything that matches should render or only the first match.
 
 #### Defined in
 
-[src/components/Match/Match.tsx:23](https://github.com/ythecombinator/react-matchez/blob/f44ba50/src/components/Match/Match.tsx#L23)
+[src/components/Match/Match.tsx:23](https://github.com/ythecombinator/react-matchez/blob/b285763/src/components/Match/Match.tsx#L23)
 
 ___
 
@@ -46,4 +46,4 @@ Entry point to create a pattern-matching expression.
 
 #### Defined in
 
-[src/components/Match/Match.tsx:19](https://github.com/ythecombinator/react-matchez/blob/f44ba50/src/components/Match/Match.tsx#L19)
+[src/components/Match/Match.tsx:19](https://github.com/ythecombinator/react-matchez/blob/b285763/src/components/Match/Match.tsx#L19)

@@ -5,7 +5,8 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "yarn run build:changelog && TYPEDOC_WATCH=true docusaurus start",
-    "build": "yarn run build:changelog && TYPEDOC_WATCH=false docusaurus build",
+    "build": "yarn run build:package && yarn run build:changelog && TYPEDOC_WATCH=false docusaurus build",
+    "build:package": "cd .. && yarn run build",
     "build:changelog": "echo '---' > ./docs/CHANGELOG.md && echo 'id: changelog' >> ./docs/CHANGELOG.md && echo 'title: Changelog' >> ./docs/CHANGELOG.md && echo '---' >> ./docs/CHANGELOG.md && cat ../CHANGELOG.md >> ./docs/CHANGELOG.md ",
     "swizzle": "docusaurus swizzle --danger",
     "deploy": "docusaurus deploy",
