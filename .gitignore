@@ -1,6 +1,18 @@
-*.log
-.DS_Store
-node_modules
+# Core
 .cache
 dist
+
+# Dependencies
+node_modules
+
+# Docusaurus
+build
+.docusaurus
+.cache-loader
+
+# Misc
+.DS_Store
+*.log
+
+# Editors
 .vscode/settings.json

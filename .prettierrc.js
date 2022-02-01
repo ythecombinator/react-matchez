@@ -1,5 +1,6 @@
 module.exports = {
-  proseWrap: 'always',
+  printWidth: 80,
+  semi: true,
   singleQuote: true,
   trailingComma: 'es5',
   importOrder: [
@@ -7,16 +8,12 @@ module.exports = {
     '^react$',
     // Other libraries
     '<THIRD_PARTY_MODULES>',
-    // Docusaurus
-    '^@docusaurus/(.*)$',
-    '^@site/(.*)$',
-    '^@theme/(.*)$',
     // Internals
-    '^pages/(.*)$',
-    '^components/(.*)$',
-    '^utils/(.*)$',
-    '^styles/(.*)$',
+    'components/(.*)$',
+    'utils/(.*)$',
+    '_internals/(.*)$',
     '^[./]',
+    // '^[./]',
   ],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
