@@ -5,6 +5,7 @@ module.exports = {
   importOrder: [
     // React
     '^react$',
+    '<THIRD_PARTY_MODULES>',
     // Docusaurus
     '^@docusaurus/(.*)$',
     '^@site/(.*)$',

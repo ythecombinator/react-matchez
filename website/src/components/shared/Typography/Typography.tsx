@@ -1,6 +1,6 @@
-import clsx from 'clsx';
-
 import React, { FunctionComponent, HTMLAttributes } from 'react';
+
+import clsx from 'clsx';
 
 import * as styles from './Typography.styles';
 

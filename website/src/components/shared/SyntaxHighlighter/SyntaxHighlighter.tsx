@@ -1,8 +1,8 @@
+import React, { FunctionComponent } from 'react';
+
 import { PrismLight as PrismSyntaxHighlighter } from 'react-syntax-highlighter';
 import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
 import { dracula, prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
-import React, { FunctionComponent } from 'react';
 
 import useThemeContext from '@theme/hooks/useThemeContext';
 
