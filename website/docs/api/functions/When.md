@@ -26,4 +26,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[src/components/When/When.tsx:15](https://github.com/ythecombinator/react-matchez/blob/2923ea6/src/components/When/When.tsx#L15)
+[src/components/When/When.tsx:15](https://github.com/ythecombinator/react-matchez/blob/5a9a3cf/src/components/When/When.tsx#L15)

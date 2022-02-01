@@ -5,6 +5,12 @@
  * work well for content-centric websites.
  */
 /* cyrillic-ext */
+@import './patterns.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: 'Roboto';
   font-style: normal;

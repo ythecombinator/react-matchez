@@ -8,8 +8,6 @@ import Separator from 'components/shared/Separator';
 
 import { updateDarkModeClass, useDarkModeObserver } from 'utils/dark-mode';
 
-import 'styles/tailwind.css';
-
 import * as styles from './Home.styles';
 import Footer from './_Footer';
 import Hero from './_Hero';
