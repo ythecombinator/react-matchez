@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.svg" width="50%" />
+  <img src="logo.png" width="90%" />
 </p>
 
 ## Overview
@@ -7,7 +7,15 @@
 - Typesafe, with helpful type inference
 - Expressive API
 - Supports predicates and not patterns for complex cases
-- Tiny bundle footprint (`~7.4 kB`)
+- Tiny bundle footprint
+
+<p align="center">
+  <img src="hero.png" />
+</p>
+
+## Documentation
+
+Visit the [official website](https://react-matchez.netlify.app) to view the full documentation.
 
 ## Status
 
@@ -18,28 +26,3 @@ breaking changes here as I figure out how to:
 - improve the overall type-safety
 - simplify its API
 - reduce its bundle size
-
-## Documentation
-
-- [Overview](#overview)
-- [Status](#status)
-- [Documentation](#documentation)
-- [Inspirations](#inspirations)
-
-## Inspirations
-
-This library has been heavily inspired by:
-
-- [ts-pattern](https://github.com/gvergnaud/ts-pattern): A great library by
-  [Gabriel Vergnaud](https://github.com/gvergnaud) that not only inspired the
-  core and the APIs of `react-matchez` but is also used by our internals.
-
-- [Daggy](https://github.com/fantasyland/daggy): A great library from the
-  [Fantasy Land](https://github.com/fantasyland) universe that brings sum types
-  to JavaScript. Using its `taggedSum` and `cata` methods, you can get really a
-  really interesting taste of pattern matching.
-
-- [ECMAScript pattern matching proposal](https://github.com/tc39/proposal-pattern-matching):
-  This proposal briefly covers what the JSX syntax would look like. Even though
-  `react-matchez` didn't quite use it as an inspiration, it was still an
-  interesting reference.
