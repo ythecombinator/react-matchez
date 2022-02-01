@@ -19,7 +19,8 @@
     "prepare": "yarn format && yarn build",
     "audit:size": "size-limit",
     "storybook:start": "start-storybook -p 6006",
-    "storybook:build": "build-storybook"
+    "storybook:build": "build-storybook",
+    "release": "release-it"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -60,6 +61,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
+    "release-it": "^14.12.4",
     "size-limit": "^7.0.5",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",
