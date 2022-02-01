@@ -1,17 +1,17 @@
 import { ComponentType } from 'react';
 
 import {
+  Exact,
+  ExactProps,
   Match,
   MatchProps,
+  Otherwise,
   Switch,
   SwitchProps,
   When,
   WhenProps,
   With,
   WithProps,
-  Exact,
-  ExactProps,
-  Otherwise,
 } from '../components';
 
 export const getPatternMatch = <Shape extends {}>(

@@ -1,20 +1,21 @@
-import { Children, createElement, Fragment, ReactNode } from 'react';
-import { isMatching } from 'ts-pattern';
+import { Children, Fragment, ReactNode, createElement } from 'react';
+
 import isEmpty from 'lodash/isEmpty';
 import pick from 'lodash/pick';
+import { isMatching } from 'ts-pattern';
 
-import { When, WhenProps } from '../components/When';
-import { With, WithProps } from '../components/With';
 import { Exact, ExactProps } from '../components/Exact';
 import { Otherwise } from '../components/Otherwise';
+import { When, WhenProps } from '../components/When';
+import { With, WithProps } from '../components/With';
 
+import { exceptions, invariant } from './error';
 import {
   ElementWithMetadata,
   ElementWithMetadataUnion,
   MatchWithCase,
   PatternUnion,
 } from './types';
-import { exceptions, invariant } from './error';
 
 // ----------------------------------------------------------------------
 //

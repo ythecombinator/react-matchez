@@ -1,8 +1,9 @@
 import React, { ReactNode } from 'react';
+
 import isNil from 'lodash/isNil';
 
-import { DeepPatternUnion } from '../../_internals/types';
 import { exceptions, invariant } from '../../_internals/error';
+import { DeepPatternUnion } from '../../_internals/types';
 
 export type ExactProps<Shape extends {}> = DeepPatternUnion<Shape, true> & {
   /** Any node to be rendered when its other props match the `value`

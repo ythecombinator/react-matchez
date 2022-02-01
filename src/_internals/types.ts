@@ -1,10 +1,11 @@
 import { PropsWithChildren, ReactElement } from 'react';
+
 import { Pattern } from 'ts-pattern';
 import { NotPattern } from 'ts-pattern/lib/types/Pattern';
 
+import { ExactProps } from '../components/Exact';
 import { WhenProps } from '../components/When';
 import { WithProps } from '../components/With';
-import { ExactProps } from '../components/Exact';
 
 export type PatternUnion<Shape extends {}> = Pattern<Shape> | NotPattern<Shape>;
 

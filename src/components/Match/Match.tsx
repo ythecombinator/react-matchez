@@ -1,18 +1,19 @@
 import { Children, ReactElement } from 'react';
 
+import { exceptions, invariant } from '../../_internals/error';
 import {
+  elementWithMetadataToElement,
+  evaluate,
+  nodesToElementWithMetadata,
+  parseChildren,
+} from '../../_internals/eval';
+
+import {
+  ExactProps,
   OtherwiseProps,
   WhenProps,
   WithProps,
-  ExactProps,
 } from '../../components';
-import {
-  nodesToElementWithMetadata,
-  parseChildren,
-  elementWithMetadataToElement,
-  evaluate,
-} from '../../_internals/eval';
-import { exceptions, invariant } from '../../_internals/error';
 
 export interface MatchProps<Shape extends {}> {
   /** Entry point to create a pattern-matching expression. */
