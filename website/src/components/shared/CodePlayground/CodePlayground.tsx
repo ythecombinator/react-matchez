@@ -1,5 +1,7 @@
 import React, { FunctionComponent } from 'react';
 
+import useIsBrowser from '@docusaurus/useIsBrowser';
+
 import useThemeContext from '@theme/hooks/useThemeContext';
 
 export interface CodePlaygroundProps {
@@ -13,7 +15,13 @@ export const CodePlayground: FunctionComponent<CodePlaygroundProps> = (
   props
 ) => {
   const { id, file, fontSize = 14, hideNavigation = true } = props;
+
+  const isBrowser = useIsBrowser();
   const { isDarkTheme } = useThemeContext();
+
+  if (!isBrowser) {
+    return <></>;
+  }
 
   const theme = isDarkTheme ? 'dark' : 'light';
   const hideNav = hideNavigation ? '1' : '0';
