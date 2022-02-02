@@ -8,7 +8,7 @@ export interface WhenProps<Shape extends {}> {
   /** Any node to be rendered when the predicate matches. */
   children: ReactNode;
   /** Condition to be satisfied for the `children` to be rendered.
-   * If the `value` prop was passed to its `Match` parent, then this predicate
+   * If the `value` prop was passed to its parent, then this predicate
    * will expose it as its first parameter. */
   predicate: (value?: Shape) => boolean;
 }

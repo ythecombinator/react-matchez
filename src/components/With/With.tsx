@@ -7,7 +7,7 @@ import { DeepPatternUnion } from '../../_internals/types';
 
 export type WithProps<Shape extends {}> = DeepPatternUnion<Shape, false> & {
   /** Any node to be rendered when its other props match the `value`
-   * defined on its `Match` parent. */
+   * defined on its parent. */
   children: ReactNode;
 };
 
