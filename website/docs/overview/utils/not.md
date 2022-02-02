@@ -4,7 +4,7 @@ title: not
 sidebar_label: not
 ---
 
-### Overview
+## Overview
 
 - It enables you to match on everything but a specific value.
 - It takes a pattern and returns its opposite.

@@ -10,8 +10,7 @@ sidebar_label: getPatternMatch
   API—so that you don't have to manually type `With`, `When`, etc. each time you
   use them.
 - It takes either:
-  - Two **regular parameters**: `value` and `strict`. This alternative is ideal
-    when you want the `Shape` to be inferred.
-  - Two **type parameters**: `Shape` and `Strict`. This alternative is ideal
-    when you have an `interface`/`type` for your `Shape` and you just want to
-    pass them.
+  - a **regular parameter**: `value`. This alternative is ideal when you want
+    the `Shape` to be inferred.
+  - a **type parameter**: `Shape`. This alternative is ideal when you have an
+    `interface`/`type` for your `Shape` and you just want to pass them.

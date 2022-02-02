@@ -1,0 +1,25 @@
+---
+id: exact
+title: Exact
+sidebar_label: Exact
+---
+
+import CodePlayground from 'components/shared/CodePlayground';
+
+## Overview
+
+- This component represents a **shape** to be matched.
+- Its props are the pattern: the shape of value you expect for this branch.
+- Its `children` will be rendered if the shape defined within its other props
+  match the `value` prop passed to its parent.
+- It takes **one** type parameter: the shape of the `value` prop passed to its
+  parent. Useful for type inference.
+- This is pretty much a **stricter** version of
+  [With](/docs/overview/components/with).
+
+## Examples
+
+<CodePlayground
+  id="react-matchez-examples-exact-90ovt"
+  file="/src/Example.tsx"
+/>

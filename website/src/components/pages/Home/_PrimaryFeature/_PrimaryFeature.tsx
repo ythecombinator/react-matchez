@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
-import SyntaxHighlighter from 'components/shared/SyntaxHighlighter';
+import CodePreview from 'components/shared/CodePreview';
 import Typography from 'components/shared/Typography';
 
 import { usePatternMatch } from '../../../../../../dist';
@@ -31,7 +31,7 @@ const PrimaryFeatureCodeSnippet: FunctionComponent<
 
   return (
     <div className={styles.featureCodeBlockContainer}>
-      <SyntaxHighlighter>{snippet}</SyntaxHighlighter>
+      <CodePreview>{snippet}</CodePreview>
     </div>
   );
 };

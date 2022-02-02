@@ -1,0 +1,24 @@
+---
+id: when
+title: When
+sidebar_label: When
+---
+
+import CodePlayground from 'components/shared/CodePlayground';
+
+## Overview
+
+- This component represents a **condition** to be satisfied.
+- Its `children` will be rendered if the `predicate` function returns a truthy
+  value.
+- If you pass the `value` prop to its parent, it's going to be available as the
+  first parameter of your `predicate` function.
+- It takes **one** type parameter: the shape of the `value` prop passed to its
+  parent. Useful for type inference.
+
+## Examples
+
+<CodePlayground
+  id="react-matchez-examples-when-slzkk"
+  file="/src/Example.tsx"
+/>

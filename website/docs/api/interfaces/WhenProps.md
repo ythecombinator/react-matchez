@@ -22,7 +22,7 @@ Any node to be rendered when the predicate matches.
 
 #### Defined in
 
-[src/components/When/When.tsx:9](https://github.com/ythecombinator/react-matchez/blob/e837130/src/components/When/When.tsx#L9)
+[src/components/When/When.tsx:9](https://github.com/ythecombinator/react-matchez/blob/869a539/src/components/When/When.tsx#L9)
 
 ## Methods
 
@@ -31,7 +31,7 @@ Any node to be rendered when the predicate matches.
 ▸ **predicate**(`value?`): `boolean`
 
 Condition to be satisfied for the `children` to be rendered.
-If the `value` prop was passed to its `Match` parent, then this predicate
+If the `value` prop was passed to its parent, then this predicate
 will expose it as its first parameter.
 
 #### Parameters
@@ -46,4 +46,4 @@ will expose it as its first parameter.
 
 #### Defined in
 
-[src/components/When/When.tsx:13](https://github.com/ythecombinator/react-matchez/blob/e837130/src/components/When/When.tsx#L13)
+[src/components/When/When.tsx:13](https://github.com/ythecombinator/react-matchez/blob/869a539/src/components/When/When.tsx#L13)
