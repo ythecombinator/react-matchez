@@ -1,0 +1,24 @@
+---
+id: match
+title: Match
+sidebar_label: Match
+---
+
+import CodePlayground from 'components/shared/CodePlayground';
+
+## Overview
+
+- This component is the wrapper for the matching cases.
+- The only required prop is its `children`.
+- Valid `children` are: `With`, `When`, and `Otherwise`.
+- If you plan on having `With` cases, then you need to pass a `value` prop.
+- You are required to have at least one `Otherwise` component as children.
+- Just like [`Switch`](/docs/overview/components/switch), but it will return
+  **all the cases that match**.
+
+## Examples
+
+<CodePlayground
+  id="react-matchez-examples-match-qqbd4"
+  file="/src/Example.tsx"
+/>

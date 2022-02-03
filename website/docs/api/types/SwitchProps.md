@@ -16,4 +16,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[src/components/Switch/Switch.tsx:5](https://github.com/ythecombinator/react-matchez/blob/869a539/src/components/Switch/Switch.tsx#L5)
+[src/components/Switch/Switch.tsx:5](https://github.com/ythecombinator/react-matchez/blob/504c7f8/src/components/Switch/Switch.tsx#L5)

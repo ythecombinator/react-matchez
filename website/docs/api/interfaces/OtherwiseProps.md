@@ -16,4 +16,4 @@ Any node to be rendered when nothing matches `With` and `When` siblings.
 
 #### Defined in
 
-[src/components/Otherwise/Otherwise.tsx:9](https://github.com/ythecombinator/react-matchez/blob/869a539/src/components/Otherwise/Otherwise.tsx#L9)
+[src/components/Otherwise/Otherwise.tsx:9](https://github.com/ythecombinator/react-matchez/blob/504c7f8/src/components/Otherwise/Otherwise.tsx#L9)

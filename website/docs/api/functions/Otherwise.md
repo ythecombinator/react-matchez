@@ -20,4 +20,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[src/components/Otherwise/Otherwise.tsx:12](https://github.com/ythecombinator/react-matchez/blob/869a539/src/components/Otherwise/Otherwise.tsx#L12)
+[src/components/Otherwise/Otherwise.tsx:12](https://github.com/ythecombinator/react-matchez/blob/504c7f8/src/components/Otherwise/Otherwise.tsx#L12)

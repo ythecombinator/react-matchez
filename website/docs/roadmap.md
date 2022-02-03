@@ -6,7 +6,7 @@ sidebar_label: Roadmap
 
 # Roadmap
 
-- [ ] Publish to npm
+- [x] Publish to npm
 - [ ] Add unit tests
 - [ ] Document recipes + common use cases
 - [ ] Restrict the type of `Match`'s children to be only `With`, `When` and

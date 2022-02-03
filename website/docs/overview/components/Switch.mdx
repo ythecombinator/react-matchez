@@ -1,8 +1,10 @@
 ---
-id: match
-title: Match
-sidebar_label: Match
+id: switch
+title: Switch
+sidebar_label: Switch
 ---
+
+import CodePlayground from 'components/shared/CodePlayground';
 
 ## Overview
 
@@ -11,3 +13,12 @@ sidebar_label: Match
 - Valid `children` are: `With`, `When`, and `Otherwise`.
 - If you plan on having `With` cases, then you need to pass a `value` prop.
 - You are required to have at least one `Otherwise` component as children.
+- Just like [`Match`](/docs/overview/components/match), but it will return
+  **only the first match**.
+
+## Examples
+
+<CodePlayground
+  id="react-matchez-examples-switch-rdnjg"
+  file="/src/Example.tsx"
+/>

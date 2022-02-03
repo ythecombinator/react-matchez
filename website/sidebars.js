@@ -3,7 +3,6 @@ module.exports = {
     'introduction',
     'quickstart',
     'advanced-usage',
-    'rationale',
     {
       type: 'category',
       label: 'Overview',
@@ -14,6 +13,7 @@ module.exports = {
         },
       ],
     },
+    'rationale',
     'roadmap',
     'changelog',
   ],
