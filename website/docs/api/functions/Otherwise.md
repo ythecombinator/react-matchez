@@ -12,7 +12,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`OtherwiseProps`](../interfaces/OtherwiseProps) |
+| `props` | [`OtherwiseProps`](../interfaces/OtherwiseProps.md) |
 
 #### Returns
 
@@ -20,4 +20,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[src/components/Otherwise/Otherwise.tsx:12](https://github.com/ythecombinator/react-matchez/blob/504c7f8/src/components/Otherwise/Otherwise.tsx#L12)
+[src/components/Otherwise/Otherwise.tsx:12](https://github.com/ythecombinator/react-matchez/blob/7a4d7c1/src/components/Otherwise/Otherwise.tsx#L12)

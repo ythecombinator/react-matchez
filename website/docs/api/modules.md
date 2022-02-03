@@ -8,24 +8,24 @@ custom_edit_url: null
 
 ## Interfaces
 
-- [MatchProps](interfaces/MatchProps)
-- [OtherwiseProps](interfaces/OtherwiseProps)
-- [WhenProps](interfaces/WhenProps)
+- [MatchProps](interfaces/MatchProps.md)
+- [OtherwiseProps](interfaces/OtherwiseProps.md)
+- [WhenProps](interfaces/WhenProps.md)
 
 ## Type aliases
 
-- [ExactProps](types/ExactProps)
-- [SwitchProps](types/SwitchProps)
-- [WithProps](types/WithProps)
+- [ExactProps](types/ExactProps.md)
+- [SwitchProps](types/SwitchProps.md)
+- [WithProps](types/WithProps.md)
 
 ## Functions
 
-- [Exact](functions/Exact)
-- [Match](functions/Match)
-- [Otherwise](functions/Otherwise)
-- [Switch](functions/Switch)
-- [When](functions/When)
-- [With](functions/With)
-- [getPatternMatch](functions/getPatternMatch)
-- [not](functions/not)
-- [usePatternMatch](functions/usePatternMatch)
+- [Exact](functions/Exact.md)
+- [Match](functions/Match.md)
+- [Otherwise](functions/Otherwise.md)
+- [Switch](functions/Switch.md)
+- [When](functions/When.md)
+- [With](functions/With.md)
+- [getPatternMatch](functions/getPatternMatch.md)
+- [not](functions/not.md)
+- [usePatternMatch](functions/usePatternMatch.md)

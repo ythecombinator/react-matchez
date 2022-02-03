@@ -18,7 +18,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`ExactProps`](../types/ExactProps)<`Shape`\> |
+| `props` | [`ExactProps`](../types/ExactProps.md)<`Shape`\> |
 
 #### Returns
 
@@ -26,4 +26,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[src/components/Exact/Exact.tsx:14](https://github.com/ythecombinator/react-matchez/blob/504c7f8/src/components/Exact/Exact.tsx#L14)
+[src/components/Exact/Exact.tsx:14](https://github.com/ythecombinator/react-matchez/blob/7a4d7c1/src/components/Exact/Exact.tsx#L14)

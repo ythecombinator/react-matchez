@@ -18,7 +18,7 @@ custom_edit_url: null
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`WithProps`](../types/WithProps)<`Shape`\> |
+| `props` | [`WithProps`](../types/WithProps.md)<`Shape`\> |
 
 #### Returns
 
@@ -26,4 +26,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[src/components/With/With.tsx:14](https://github.com/ythecombinator/react-matchez/blob/504c7f8/src/components/With/With.tsx#L14)
+[src/components/With/With.tsx:14](https://github.com/ythecombinator/react-matchez/blob/7a4d7c1/src/components/With/With.tsx#L14)

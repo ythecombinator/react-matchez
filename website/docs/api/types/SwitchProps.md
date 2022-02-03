@@ -6,7 +6,7 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-Ƭ **SwitchProps**<`Shape`\>: `Omit`<[`MatchProps`](../interfaces/MatchProps)<`Shape`\>, ``"firstMatch"``\>
+Ƭ **SwitchProps**<`Shape`\>: `Omit`<[`MatchProps`](../interfaces/MatchProps.md)<`Shape`\>, ``"firstMatch"``\>
 
 #### Type parameters
 
@@ -16,4 +16,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[src/components/Switch/Switch.tsx:5](https://github.com/ythecombinator/react-matchez/blob/504c7f8/src/components/Switch/Switch.tsx#L5)
+[src/components/Switch/Switch.tsx:5](https://github.com/ythecombinator/react-matchez/blob/7a4d7c1/src/components/Switch/Switch.tsx#L5)
