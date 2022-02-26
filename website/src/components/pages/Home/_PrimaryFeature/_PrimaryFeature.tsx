@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 
 import CodePreview from 'components/shared/CodePreview';
 import Typography from 'components/shared/Typography';
+import Video, { VideoProps } from 'components/shared/Video';
 
 import { usePatternMatch } from '../../../../../../dist';
 import * as styles from './_PrimaryFeature.styles';
@@ -10,9 +11,7 @@ interface PrimaryFeatureCodeSnippetProps {
   snippet: string;
 }
 
-interface PrimaryFeatureVideoProps {
-  video: string;
-}
+interface PrimaryFeatureVideoProps extends VideoProps {}
 
 export type PrimaryFeatureProps =
   | ({
@@ -39,20 +38,9 @@ const PrimaryFeatureCodeSnippet: FunctionComponent<
 const PrimaryFeatureVideo: FunctionComponent<PrimaryFeatureVideoProps> = (
   props
 ) => {
-  const { video } = props;
-
   return (
     <div className={styles.featureVideoContainer}>
-      <video
-        className={styles.featureVideo}
-        width="100%"
-        loop
-        autoPlay
-        muted
-        controls
-      >
-        <source src={video} type="video/mp4" />
-      </video>
+      <Video className={styles.featureVideo} controls {...props} />
     </div>
   );
 };
@@ -79,7 +67,7 @@ export const PrimaryFeature: FunctionComponent<PrimaryFeatureProps> = (
             <Match value={props}>
               <With type="video">
                 <PrimaryFeatureVideo
-                  video={(otherProps as PrimaryFeatureVideoProps).video}
+                  {...(otherProps as PrimaryFeatureVideoProps)}
                 />
               </With>
               <With type="snippet">
@@ -89,7 +77,7 @@ export const PrimaryFeature: FunctionComponent<PrimaryFeatureProps> = (
                   }
                 />
               </With>
-              <Otherwise>Fallback.</Otherwise>
+              <Otherwise>Media type not supported.</Otherwise>
             </Match>
           </div>
         </div>

@@ -8,7 +8,7 @@ import * as styles from './_Introduction.styles';
 
 export const Introduction: FunctionComponent = () => {
   return (
-    <section className={styles.section}>
+    <article className={styles.section}>
       <div className={styles.outerContainer}>
         <div className={styles.innerContainer}>
           <div className={styles.logoContainer}>
@@ -35,6 +35,6 @@ export const Introduction: FunctionComponent = () => {
           </div>
         </div>
       </div>
-    </section>
+    </article>
   );
 };

@@ -16,4 +16,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[src/components/Exact/Exact.tsx:8](https://github.com/ythecombinator/react-matchez/blob/7a4d7c1/src/components/Exact/Exact.tsx#L8)
+[src/components/Exact/Exact.tsx:8](https://github.com/ythecombinator/react-matchez/blob/c3e2afb/src/components/Exact/Exact.tsx#L8)

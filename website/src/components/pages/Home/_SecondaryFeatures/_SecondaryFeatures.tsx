@@ -30,7 +30,7 @@ const features = [
 
 export const SecondaryFeatures: FunctionComponent = () => {
   return (
-    <section className={styles.section}>
+    <article className={styles.section}>
       <div className={styles.outerContainer}>
         <div className={styles.innerContainer}>
           <div className={styles.textContainer}>
@@ -52,6 +52,6 @@ export const SecondaryFeatures: FunctionComponent = () => {
           </div>
         </div>
       </div>
-    </section>
+    </article>
   );
 };

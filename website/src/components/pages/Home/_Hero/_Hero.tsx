@@ -2,11 +2,20 @@ import React, { FunctionComponent, Suspense, lazy } from 'react';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import heroVideo from '@site/static/img/hero.mp4';
+import heroVideoMP4 from '@site/static/img/hero.mp4';
+import heroVideoPNG from '@site/static/img/hero.png';
+import heroVideoWEBM from '@site/static/img/hero.webm';
 
 import Button from 'components/shared/Button';
+import Video from 'components/shared/Video';
 
 import * as styles from './_Hero.styles';
+
+const hero = {
+  mp4: heroVideoMP4,
+  webm: heroVideoWEBM,
+  png: heroVideoPNG,
+};
 
 export const Hero: FunctionComponent = () => {
   const fallback = (
@@ -67,9 +76,11 @@ export const Hero: FunctionComponent = () => {
         </div>
         {/* Video */}
         <div className={styles.videoContainer}>
-          <video className={styles.video} width="100%" loop autoPlay muted>
-            <source src={heroVideo} type="video/mp4" />
-          </video>
+          <Video
+            defaultSrc={hero.mp4}
+            webmSrc={hero.webm}
+            fallback={hero.png}
+          />
         </div>
       </div>
     </section>

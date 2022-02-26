@@ -22,7 +22,7 @@ Any node to be rendered when the predicate matches.
 
 #### Defined in
 
-[src/components/When/When.tsx:9](https://github.com/ythecombinator/react-matchez/blob/7a4d7c1/src/components/When/When.tsx#L9)
+[src/components/When/When.tsx:9](https://github.com/ythecombinator/react-matchez/blob/c3e2afb/src/components/When/When.tsx#L9)
 
 ## Methods
 
@@ -46,4 +46,4 @@ will expose it as its first parameter.
 
 #### Defined in
 
-[src/components/When/When.tsx:13](https://github.com/ythecombinator/react-matchez/blob/7a4d7c1/src/components/When/When.tsx#L13)
+[src/components/When/When.tsx:13](https://github.com/ythecombinator/react-matchez/blob/c3e2afb/src/components/When/When.tsx#L13)

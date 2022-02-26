@@ -1,6 +1,8 @@
 import React, { FunctionComponent } from 'react';
 
-import heroVideo from '@site/static/img/hero.mp4';
+import heroVideoMP4 from '@site/static/img/hero.mp4';
+import heroVideoPNG from '@site/static/img/hero.png';
+import heroVideoWEBM from '@site/static/img/hero.webm';
 
 import Typography from 'components/shared/Typography';
 
@@ -60,11 +62,15 @@ export default function MyComponent() {
 }`,
 ];
 
-const videos = [heroVideo];
+const hero = {
+  mp4: heroVideoMP4,
+  webm: heroVideoWEBM,
+  png: heroVideoPNG,
+};
 
 export const PrimaryFeatures: FunctionComponent = () => {
   return (
-    <section className={styles.section}>
+    <article className={styles.section}>
       <PrimaryFeature
         title="Easy-to-reason-about, familiar, API"
         type="snippet"
@@ -86,7 +92,9 @@ export const PrimaryFeatures: FunctionComponent = () => {
       <PrimaryFeature
         title="Lorem ipsum dolor sit amet"
         type="video"
-        video={videos[0]}
+        defaultSrc={hero.mp4}
+        webmSrc={hero.webm}
+        fallback={hero.png}
       >
         <Typography.p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -112,6 +120,6 @@ export const PrimaryFeatures: FunctionComponent = () => {
           <b>only the actual component bundle</b> that matches your condition.
         </Typography.p>
       </PrimaryFeature>
-    </section>
+    </article>
   );
 };
